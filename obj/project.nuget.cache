@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "tATi66eBX8A=",
+  "dgSpecHash": "HeAWpGmhqM0=",
   "success": true,
   "projectFilePath": "/home/ilabs/dotnet/learn/learn.csproj",
   "expectedPackageFiles": [
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore/10.0.1/microsoft.entityframeworkcore.10.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.1/microsoft.entityframeworkcore.abstractions.10.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.1/microsoft.entityframeworkcore.analyzers.10.0.1.nupkg.sha512",
-    "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.inmemory/10.0.1/microsoft.entityframeworkcore.inmemory.10.0.1.nupkg.sha512"
+    "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.inmemory/10.0.1/microsoft.entityframeworkcore.inmemory.10.0.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.0/microsoft.entityframeworkcore.relational.9.0.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/mysqlconnector/2.4.0/mysqlconnector.2.4.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/pomelo.entityframeworkcore.mysql/9.0.0/pomelo.entityframeworkcore.mysql.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }
