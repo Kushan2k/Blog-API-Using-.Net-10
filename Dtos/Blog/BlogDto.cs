@@ -1,5 +1,5 @@
 
-namespace learn.Dtos;
+namespace learn.Dtos.Blog;
 
 
 public record BlogDto(
