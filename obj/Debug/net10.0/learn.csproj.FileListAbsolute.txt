@@ -117,3 +117,6 @@
 /home/ilabs/dotnet/learn/obj/Debug/net10.0/learn.pdb
 /home/ilabs/dotnet/learn/obj/Debug/net10.0/learn.genruntimeconfig.cache
 /home/ilabs/dotnet/learn/obj/Debug/net10.0/ref/learn.dll
+/home/ilabs/dotnet/learn/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/home/ilabs/dotnet/learn/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/home/ilabs/dotnet/learn/obj/Debug/net10.0/learn.MvcApplicationPartsAssemblyInfo.cs

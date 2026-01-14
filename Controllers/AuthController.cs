@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace learn.Controllers;
 
+
+[ApiController]
+[Route("api/auth")]
 public class AuthController(AuthService _authService) : ControllerBase
 {
 

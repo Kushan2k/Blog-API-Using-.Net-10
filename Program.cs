@@ -1,16 +1,19 @@
-using learn.Context;
-using learn.Routes;
+using learn.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddValidation();
+builder.Services.AddControllers();
 
-builder.Services.AddMySql<ApplicationDbContext>(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 23)));
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddMySql<ApplicationDbContext>(connString, ServerVersion.AutoDetect(connString));
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
-app.RegisterAuthRoutes();
-app.RegisterBlogRoutes();
+app.MapControllers();
+
+app.MigrateDB();
 
 app.Run();

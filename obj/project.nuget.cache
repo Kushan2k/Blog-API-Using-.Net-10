@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "7GpG56DxObU=",
+  "dgSpecHash": "tUdwQDzi9qM=",
   "success": true,
   "projectFilePath": "/home/ilabs/dotnet/learn/learn.csproj",
   "expectedPackageFiles": [
     "/home/ilabs/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.mvc/2.3.9/microsoft.aspnetcore.mvc.2.3.9.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/2.3.0/microsoft.aspnetcore.mvc.razor.extensions.2.3.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.openapi/10.0.2/microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.razor.design/2.3.0/microsoft.aspnetcore.razor.design.2.3.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.razor.language/2.3.0/microsoft.aspnetcore.razor.language.2.3.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.build.locator/1.7.8/microsoft.build.locator.1.7.8.nupkg.sha512",
@@ -12,6 +17,7 @@
     "/home/ilabs/.nuget/packages/microsoft.codeanalysis.common/4.8.0/microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.codeanalysis.csharp/4.8.0/microsoft.codeanalysis.csharp.4.8.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.codeanalysis.csharp.workspaces/4.8.0/microsoft.codeanalysis.csharp.workspaces.4.8.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.codeanalysis.razor/2.3.0/microsoft.codeanalysis.razor.2.3.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.8.0/microsoft.codeanalysis.workspaces.common.4.8.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.codeanalysis.workspaces.msbuild/4.8.0/microsoft.codeanalysis.workspaces.msbuild.4.8.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore/9.0.1/microsoft.entityframeworkcore.9.0.1.nupkg.sha512",
@@ -21,6 +27,7 @@
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.1/microsoft.entityframeworkcore.relational.9.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.tools/9.0.1/microsoft.entityframeworkcore.tools.9.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.extensions.dependencymodel/9.0.1/microsoft.extensions.dependencymodel.9.0.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/mysqlconnector/2.4.0/mysqlconnector.2.4.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/pomelo.entityframeworkcore.mysql/9.0.0/pomelo.entityframeworkcore.mysql.9.0.0.nupkg.sha512",
@@ -32,5 +39,18 @@
     "/home/ilabs/.nuget/packages/system.composition.runtime/7.0.0/system.composition.runtime.7.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.AspNetCore.Mvc will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "/home/ilabs/dotnet/learn/learn.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/ilabs/dotnet/learn/learn.csproj",
+      "libraryId": "Microsoft.AspNetCore.Mvc",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
