@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "tUdwQDzi9qM=",
+  "dgSpecHash": "ldba7QHoz7Q=",
   "success": true,
   "projectFilePath": "/home/ilabs/dotnet/learn/learn.csproj",
   "expectedPackageFiles": [
     "/home/ilabs/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/10.0.2/microsoft.aspnetcore.authentication.jwtbearer.10.0.2.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.aspnetcore.mvc/2.3.9/microsoft.aspnetcore.mvc.2.3.9.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/2.3.0/microsoft.aspnetcore.mvc.razor.extensions.2.3.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.aspnetcore.openapi/10.0.2/microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
@@ -27,6 +28,12 @@
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.1/microsoft.entityframeworkcore.relational.9.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.entityframeworkcore.tools/9.0.1/microsoft.entityframeworkcore.tools.9.0.1.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.extensions.dependencymodel/9.0.1/microsoft.extensions.dependencymodel.9.0.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.abstractions/8.15.0/microsoft.identitymodel.abstractions.8.15.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.15.0/microsoft.identitymodel.jsonwebtokens.8.15.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.logging/8.15.0/microsoft.identitymodel.logging.8.15.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.protocols/8.0.1/microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/8.0.1/microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/microsoft.identitymodel.tokens/8.15.0/microsoft.identitymodel.tokens.8.15.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/mysqlconnector/2.4.0/mysqlconnector.2.4.0.nupkg.sha512",
@@ -37,7 +44,8 @@
     "/home/ilabs/.nuget/packages/system.composition.convention/7.0.0/system.composition.convention.7.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/system.composition.hosting/7.0.0/system.composition.hosting.7.0.0.nupkg.sha512",
     "/home/ilabs/.nuget/packages/system.composition.runtime/7.0.0/system.composition.runtime.7.0.0.nupkg.sha512",
-    "/home/ilabs/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512"
+    "/home/ilabs/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512",
+    "/home/ilabs/.nuget/packages/system.identitymodel.tokens.jwt/8.15.0/system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
   ],
   "logs": [
     {
