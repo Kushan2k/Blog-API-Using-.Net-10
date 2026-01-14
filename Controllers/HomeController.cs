@@ -1,21 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace learn.Controllers
+namespace learn.Controllers;
+
+
+[ApiController]
+[Route("/")]
+
+public class HomeController : Controller
 {
 
-    [ApiController]
-    [Route("/")]
-
-    public class HomeController : Controller
+    [HttpGet("/test")]
+    public IActionResult Index()
     {
-
-        [HttpGet("/test")]
-        public IActionResult Index()
-        {
-
-
-            return Ok("Welcome to the Home Page!");
-        }
-
+        return Ok("Welcome to the Home Page!");
     }
+
 }
