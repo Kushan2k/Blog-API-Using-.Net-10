@@ -3,6 +3,6 @@ namespace learn.Dtos.User;
 
 public record UserDto(
     int Id,
-    string UserName,
+    string FullName,
     string Email
 );
