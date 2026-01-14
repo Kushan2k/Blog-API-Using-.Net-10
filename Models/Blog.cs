@@ -8,4 +8,7 @@ public class Blog
 
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+    public int AuthorId { get; set; }
+    public User? _author { get; set; }
+
 }

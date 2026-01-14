@@ -1,7 +1,7 @@
+namespace learn.Data;
+
 using learn.Models;
 using Microsoft.EntityFrameworkCore;
-
-namespace learn.Context;
 
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)

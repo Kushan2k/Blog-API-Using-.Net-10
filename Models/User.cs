@@ -7,4 +7,7 @@ public class User
     public required string Email { get; set; }
 
     public required string PasswordHash { get; set; }
+
+
+    public ICollection<Blog> Blogs { get; set; } = new List<Blog>();
 }

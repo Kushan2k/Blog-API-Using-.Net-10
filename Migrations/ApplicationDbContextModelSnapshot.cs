@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using learn.Context;
+using learn.Data;
 
 #nullable disable
 
@@ -30,6 +30,9 @@ namespace learn.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -44,7 +47,12 @@ namespace learn.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int?>("_authorId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("_authorId");
 
                     b.ToTable("Blogs");
                 });
@@ -72,6 +80,20 @@ namespace learn.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("learn.Models.Blog", b =>
+                {
+                    b.HasOne("learn.Models.User", "_author")
+                        .WithMany("Blogs")
+                        .HasForeignKey("_authorId");
+
+                    b.Navigation("_author");
+                });
+
+            modelBuilder.Entity("learn.Models.User", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }
