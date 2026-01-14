@@ -1,8 +1,12 @@
 using learn.Data;
+using learn.Extentions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddValidation();
+
+builder.RegisterServices();
+
 builder.Services.AddControllers();
 
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
