@@ -24,6 +24,7 @@ public class AuthController : ControllerBase
         return _authService.ValidateUser("kushan", "password");
     }
 
+    [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] UserCreateDto userCreateDto)
     {
         var user = await _authService.CreateUser(userCreateDto);
