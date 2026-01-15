@@ -7,18 +7,12 @@ namespace learn.Controllers;
 
 [ApiController]
 [Route("api/auth")]
-public class AuthController : ControllerBase
+public class AuthController(IAuthService authService) : ControllerBase
 {
 
-    private readonly IAuthService _authService;
+    private readonly IAuthService _authService = authService;
 
-    public AuthController(IAuthService authService)
-    {
-        _authService = authService;
-    }
-
-
-    [HttpGet("login")]
+  [HttpGet("login")]
     public bool Login()
     {
         return _authService.ValidateUser("kushan", "password");
@@ -27,6 +21,10 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] UserCreateDto userCreateDto)
     {
+        if (!userCreateDto.Password.Equals(userCreateDto.ConfirmPassword))
+        {
+            return BadRequest(new { message = "Password and Confirm Password do not match" });
+        }
         var user = await _authService.CreateUser(userCreateDto);
         return Ok(new { message = "User created successfully", data = user });
     }
