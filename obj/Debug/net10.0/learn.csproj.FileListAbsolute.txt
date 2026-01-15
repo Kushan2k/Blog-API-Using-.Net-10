@@ -250,3 +250,12 @@ D:\Blog-API-Using-.Net-10\obj\Debug\net10.0\refint\learn.dll
 D:\Blog-API-Using-.Net-10\obj\Debug\net10.0\learn.pdb
 D:\Blog-API-Using-.Net-10\obj\Debug\net10.0\learn.genruntimeconfig.cache
 D:\Blog-API-Using-.Net-10\obj\Debug\net10.0\ref\learn.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.AspNetCore.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+D:\Blog-API-Using-.Net-10\bin\Debug\net10.0\Serilog.Sinks.File.dll

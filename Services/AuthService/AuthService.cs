@@ -1,16 +1,16 @@
-using System.Security.Cryptography;
+
 using learn.Data;
 using learn.Dtos.User;
 using learn.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.AspNetCore.Http.HttpResults;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using ILogger = learn.Factories.Logger.ILogger;
 namespace learn.Services.AuthService;
 
 
-public class AuthService(ApplicationDbContext _context) : IAuthService
+public class AuthService(ApplicationDbContext _context,ILogger _logger) : IAuthService
 {
     public bool ValidateUser(string username, string password)
     {
@@ -54,6 +54,9 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
+
+            _logger.LogInfo($"[{DateTime.Now}] -- User created successfully with email: {user.Email}");
+            
             return new CreatedResult("", new { message = "User created successfully", data = new UserDto(user.Id, user.Email, user.FullName) } );
             
             
@@ -61,6 +64,7 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
         catch (Exception ex)
         {
             Console.WriteLine($"==============Error creating user: {ex.Message}");
+            _logger.LogError($"[{DateTime.Now}] -- Error creating user: {ex.Message}");
             return new StatusCodeResult(500);
         }
     }

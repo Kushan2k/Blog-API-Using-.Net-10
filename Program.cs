@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddValidation();
 
 builder.RegisterServices();
+builder.AddLogger();
 
 builder.Services.AddControllers();
 
