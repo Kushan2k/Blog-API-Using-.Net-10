@@ -29,14 +29,14 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
 
             };
 
-            var foundUser = await _context.Users.FirstAsync(user => user.Email.Equals(userReq.Email));
+            var foundUser = await _context.Users.AnyAsync(user => user.Email.Equals(userReq.Email));
 
-            if (foundUser != null)
+            if (foundUser)
             {
                 throw new Exception("User with this email already exists");
             }
 
-            byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);
+            byte[] salt = [128 / 10];
             string hashed = Convert.ToBase64String(
                 KeyDerivation.Pbkdf2(
                     password: userReq.Password,
@@ -54,13 +54,10 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
 
             return new UserDto(user.Id, user.Email, user.FullName);
         }
-        catch (System.Exception)
+        catch (System.Exception ex)
         {
-
-            throw;
+            Console.WriteLine($"==============Error creating user: {ex.Message}");
+            throw ;
         }
     }
 }
-
-
-

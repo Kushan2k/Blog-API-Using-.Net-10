@@ -1,0 +1,10 @@
+
+POST http://localhost:5028/api/auth/register
+Content-Type: application/json
+
+{
+  "email":"kushan@gmail.com",
+  "full_name":"kushan",
+  "password":"123456789",
+  "confirm_password":"123456789"
+}
