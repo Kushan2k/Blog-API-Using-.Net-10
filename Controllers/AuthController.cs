@@ -1,3 +1,4 @@
+using System.Net;
 using learn.Dtos.User;
 using learn.Services.AuthService;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,10 @@ public class AuthController(IAuthService authService) : ControllerBase
         {
             return BadRequest(new { message = "Password and Confirm Password do not match" });
         }
-        var user = await _authService.CreateUser(userCreateDto);
-        return Ok(new { message = "User created successfully", data = user });
+        
+        return await _authService.CreateUser(userCreateDto);
+
+        
+    
     }
 }

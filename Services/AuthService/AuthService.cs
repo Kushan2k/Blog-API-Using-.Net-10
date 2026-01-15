@@ -3,6 +3,8 @@ using learn.Data;
 using learn.Dtos.User;
 using learn.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace learn.Services.AuthService;
@@ -16,7 +18,7 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
     }
 
 
-    public async Task<UserDto> CreateUser(UserCreateDto userReq)
+    public async Task<IActionResult> CreateUser(UserCreateDto userReq)
     {
 
         try
@@ -33,10 +35,10 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
 
             if (foundUser)
             {
-                throw new Exception("User with this email already exists");
+                return new ConflictObjectResult(new { message = "User with this email already exists" });
             }
 
-            byte[] salt = [128 / 10];
+            byte[] salt = new byte[128 / 8];
             string hashed = Convert.ToBase64String(
                 KeyDerivation.Pbkdf2(
                     password: userReq.Password,
@@ -52,12 +54,14 @@ public class AuthService(ApplicationDbContext _context) : IAuthService
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
-            return new UserDto(user.Id, user.Email, user.FullName);
+            return new CreatedResult("", new { message = "User created successfully", data = new UserDto(user.Id, user.Email, user.FullName) } );
+            
+            
         }
-        catch (System.Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine($"==============Error creating user: {ex.Message}");
-            throw ;
+            return new StatusCodeResult(500);
         }
     }
 }

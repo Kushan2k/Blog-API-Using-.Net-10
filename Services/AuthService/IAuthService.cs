@@ -1,4 +1,5 @@
 using learn.Dtos.User;
+using Microsoft.AspNetCore.Mvc;
 
 namespace learn.Services.AuthService;
 
@@ -6,5 +7,5 @@ public interface IAuthService
 {
 
     bool ValidateUser(string username, string password);
-    Task<UserDto> CreateUser(UserCreateDto userReq);
+    Task<IActionResult> CreateUser(UserCreateDto userReq);
 }
