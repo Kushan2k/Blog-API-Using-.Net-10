@@ -2783,24 +2783,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kusha\\.nuget\\packages\\": {}
+    "/home/ilabs/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Blog-API-Using-.Net-10\\learn.csproj",
+      "projectUniqueName": "/home/ilabs/dotnet/learn/learn.csproj",
       "projectName": "learn",
-      "projectPath": "D:\\Blog-API-Using-.Net-10\\learn.csproj",
-      "packagesPath": "C:\\Users\\kusha\\.nuget\\packages\\",
-      "outputPath": "D:\\Blog-API-Using-.Net-10\\obj\\",
+      "projectPath": "/home/ilabs/dotnet/learn/learn.csproj",
+      "packagesPath": "/home/ilabs/.nuget/packages/",
+      "outputPath": "/home/ilabs/dotnet/learn/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kusha\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/ilabs/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2885,7 +2886,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
