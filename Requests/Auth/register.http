@@ -3,7 +3,7 @@ POST http://localhost:5028/api/auth/register
 Content-Type: application/json
 
 {
-  "email":"kushan001@gmail.com",
+  "email":"kushan00@gmail.com",
   "full_name":"kushan",
   "password":"123456789",
   "confirm_password":"123456789"
@@ -11,4 +11,5 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5028/api/auth/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJrdXNoYW4wMEBnbWFpbC5jb20iLCJqdGkiOiIxMzUxZjY2ZS00NWM5LTRjNWItYjBlNi00MzhmYmVmZjAzZjQiLCJ1c2VySWQiOiIyIiwiZXhwIjoxNzY5MTQyNzM4LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMjgiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMjgifQ.TwD9ar1F6cmobJtYMpfdQlNjPUXxu0LWI3bjHBoNwTo
 
