@@ -33,6 +33,13 @@ public class AuthController(IAuthService authService) : ControllerBase
         return await _authService.CreateUser(userCreateDto);
     }
 
+    [HttpPost("login")]
+    [AllowAnonymous]
+    public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
+    {
+        return await _authService.LoginUser(userLoginDto);
+    }
+
 
     [HttpGet("protected")]
     [Authorize]
