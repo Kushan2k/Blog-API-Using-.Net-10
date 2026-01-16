@@ -276,3 +276,4 @@ D:/Blog-API-Using-.Net-10/bin/Debug/net10.0/Serilog.Sinks.File.dll
 /home/ilabs/dotnet/learn/bin/Debug/net10.0/Serilog.Sinks.Debug.dll
 /home/ilabs/dotnet/learn/bin/Debug/net10.0/Serilog.Sinks.File.dll
 /home/ilabs/dotnet/learn/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
+/home/ilabs/dotnet/learn/bin/Debug/net10.0/BCrypt.Net-Next.dll
