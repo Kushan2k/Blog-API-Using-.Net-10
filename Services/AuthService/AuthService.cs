@@ -2,15 +2,16 @@
 using learn.Data;
 using learn.Dtos.User;
 using learn.Models;
+using learn.Services.JwtService;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ILogger = learn.Factories.Logger.ILogger;
 namespace learn.Services.AuthService;
 
 
-public class AuthService(ApplicationDbContext _context, ILogger _logger) : IAuthService
+public class AuthService(ApplicationDbContext _context, ILogger _logger, IJwtService _jwtService) : IAuthService
 {
     public bool ValidateUser(string username, string password)
     {
@@ -39,15 +40,7 @@ public class AuthService(ApplicationDbContext _context, ILogger _logger) : IAuth
             }
 
             byte[] salt = new byte[128 / 8];
-            string hashed = Convert.ToBase64String(
-                KeyDerivation.Pbkdf2(
-                    password: userReq.Password,
-                    salt: salt,
-                    prf: KeyDerivationPrf.HMACSHA256,
-                    iterationCount: 100000,
-                    numBytesRequested: 256 / 8
-                )
-            );
+            string hashed = BCrypt.Net.BCrypt.EnhancedHashPassword(userReq.Password);
 
             user.PasswordHash = hashed;
 
@@ -69,8 +62,34 @@ public class AuthService(ApplicationDbContext _context, ILogger _logger) : IAuth
         }
     }
 
-    public Task<IActionResult> LoginUser(UserLoginDto userLoginDto)
+    public async Task<IActionResult> LoginUser(UserLoginDto userLoginDto)
     {
-        throw new NotImplementedException();
+
+        try
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.Equals(userLoginDto.Email));
+
+            if (user == null)
+            {
+                return new NotFoundObjectResult(new { message = "User not found" });
+            }
+            bool verified = BCrypt.Net.BCrypt.EnhancedVerify(userLoginDto.Password, user.PasswordHash);
+            if (!verified)
+            {
+                return new UnauthorizedObjectResult(new { message = "Invalid credentials" });
+            }
+            _logger.LogInfo($"[{DateTime.Now}] -- User logged in successfully with email: {user.Email}");
+
+            string token = _jwtService.GenerateToken(user);
+
+            return new OkObjectResult(new { message = "Login successful", token = token });
+
+
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"[{DateTime.Now}] -- Error logging in user: {ex.Message}");
+            return new StatusCodeResult(500);
+        }
     }
 }
