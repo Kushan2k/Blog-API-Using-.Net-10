@@ -8,3 +8,7 @@ Content-Type: application/json
   "password":"123456789",
   "confirm_password":"123456789"
 }
+
+###
+GET http://localhost:5028/api/auth/protected
+

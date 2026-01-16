@@ -10,7 +10,7 @@ using ILogger = learn.Factories.Logger.ILogger;
 namespace learn.Services.AuthService;
 
 
-public class AuthService(ApplicationDbContext _context,ILogger _logger) : IAuthService
+public class AuthService(ApplicationDbContext _context, ILogger _logger) : IAuthService
 {
     public bool ValidateUser(string username, string password)
     {
@@ -56,10 +56,10 @@ public class AuthService(ApplicationDbContext _context,ILogger _logger) : IAuthS
 
 
             _logger.LogInfo($"[{DateTime.Now}] -- User created successfully with email: {user.Email}");
-            
-            return new CreatedResult("", new { message = "User created successfully", data = new UserDto(user.Id, user.Email, user.FullName) } );
-            
-            
+
+            return new CreatedResult("", new { message = "User created successfully", data = new UserDto(user.Id, user.Email, user.FullName) });
+
+
         }
         catch (Exception ex)
         {
@@ -67,5 +67,10 @@ public class AuthService(ApplicationDbContext _context,ILogger _logger) : IAuthS
             _logger.LogError($"[{DateTime.Now}] -- Error creating user: {ex.Message}");
             return new StatusCodeResult(500);
         }
+    }
+
+    public Task<IActionResult> LoginUser(UserLoginDto userLoginDto)
+    {
+        throw new NotImplementedException();
     }
 }

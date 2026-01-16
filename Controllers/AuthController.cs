@@ -31,8 +31,14 @@ public class AuthController(IAuthService authService) : ControllerBase
         }
 
         return await _authService.CreateUser(userCreateDto);
+    }
 
 
+    [HttpGet("protected")]
+    [Authorize]
+    public IActionResult ProtectedRoute()
+    {
 
+        return Ok("You have accessed a protected route");
     }
 }

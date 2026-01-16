@@ -7,6 +7,7 @@ builder.Services.AddValidation();
 
 builder.RegisterServices();
 builder.AddLogger();
+builder.AddAuthenticationJwt();
 
 builder.Services.AddControllers();
 
