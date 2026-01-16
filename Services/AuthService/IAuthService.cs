@@ -8,4 +8,5 @@ public interface IAuthService
 
     bool ValidateUser(string username, string password);
     Task<IActionResult> CreateUser(UserCreateDto userReq);
+    Task<IActionResult> LoginUser(UserLoginDto userLoginDto);
 }
