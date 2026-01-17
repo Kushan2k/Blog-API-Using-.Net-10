@@ -11,4 +11,5 @@ public interface IBlogService
     Task<ICollection<Blog>> GetAllBlogsAsync();
 
     Task<IActionResult> GetBlogByIdAsync(int id);
+    Task<IActionResult> GetBlogsByAuthorIdAsync(int authorId);
 }
