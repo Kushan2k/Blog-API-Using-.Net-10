@@ -46,5 +46,6 @@ public static class AppExtentions
                 IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
             };
         });
+        builder.Services.AddAuthorization();
     }
 }
