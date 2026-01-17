@@ -1,10 +1,14 @@
+using learn.Dtos.Blog;
 using learn.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace learn.Services.BlogService;
 
 public interface IBlogService
 {
-    void CreatePost(string title, string content);
+    Task<IActionResult> CreateBlogAsync(BlogCreateDto blogCreateDto);
 
     Task<ICollection<Blog>> GetAllBlogsAsync();
+
+    Task<IActionResult> GetBlogByIdAsync(int id);
 }
