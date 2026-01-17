@@ -17,17 +17,17 @@ public class BlogsController(IBlogService blogService) : ControllerBase
     [AllowAnonymous]
     public async Task<ActionResult> GetAllBlogs()
     {
-
+        Console.WriteLine("userid from middleware: " + HttpContext.Items["UserId"]);
 
         return Ok(new { message = "All Blogs fetched successfully", data = await _blogService.GetAllBlogsAsync(), status = HttpStatusCode.OK });
     }
 
-    [HttpGet("/{id}")]
+    [HttpGet("{id}",Name = "GetBlogById")]
     [AllowAnonymous]
     public async Task<IActionResult> GetBlogById(int id)
     {
 
-        return Ok(new { message = "Blog fetched successfully", status = HttpStatusCode.OK });
+        return await _blogService.GetBlogByIdAsync(id);
     }
 
 
@@ -35,7 +35,7 @@ public class BlogsController(IBlogService blogService) : ControllerBase
     [Authorize]
     public async Task<IActionResult> CreateBlog([FromBody] BlogCreateDto blogCreateDto)
     {
-        return Ok(new { message = "Blog created successfully", status = HttpStatusCode.OK });
+        return await _blogService.CreateBlogAsync(blogCreateDto);
     }
 
 }
