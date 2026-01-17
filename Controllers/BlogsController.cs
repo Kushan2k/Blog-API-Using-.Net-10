@@ -38,4 +38,20 @@ public class BlogsController(IBlogService blogService) : ControllerBase
         return await _blogService.CreateBlogAsync(blogCreateDto);
     }
 
+
+    [HttpGet("myblogs")]
+    [Authorize]
+    public async Task<IActionResult> GetMyBlogs()
+    {
+        var userId = HttpContext.Items["UserId"];
+        if (userId == null)
+        {
+            return Unauthorized(new { message = "User not authorized", status = HttpStatusCode.Unauthorized });
+        }
+
+        var blogs = await _blogService.GetBlogsByAuthorIdAsync(Convert.ToInt32(userId));
+
+        return Ok(new { message = "User's Blogs fetched successfully", data = blogs, status = HttpStatusCode.OK });
+    }
+
 }

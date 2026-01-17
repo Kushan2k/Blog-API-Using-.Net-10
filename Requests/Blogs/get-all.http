@@ -1,4 +1,9 @@
 
-GET http://localhost:5028/api/blogs
+GET http://localhost:5028/api/blogs/3
+Content-Type: application/json
+
+###
+
+GET http://localhost:5028/api/blogs/myblogs
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJrdXNoYW4wMEBnbWFpbC5jb20iLCJqdGkiOiJhYjgxODZkMy0yMWU0LTRhYzktYmJmZi0wNzY1NzcyYTA3YzIiLCJ1c2VySWQiOiI0IiwiZXhwIjoxNzY5MjcyNjI3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMjgiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjUwMjgifQ.RcpcW6syhVBeE3Ik0-k9NweGBFVr_W61tjW5p2tErBo
