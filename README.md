@@ -1,1 +1,1 @@
-## Blog Api using .Net 10
+## Blog Api using .Net 10 core web api
