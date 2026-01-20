@@ -15,8 +15,9 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 ### Prerequisites
 
 - .NET 10 SDK or later
-- SQL Server or compatible database
+- MySql or compatible database
 - Visual Studio 2022 or VS Code
+- Postman or similar API testing tool
 
 ### Getting Started
 
