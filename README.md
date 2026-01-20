@@ -53,3 +53,11 @@ src/
 ### License
 
 MIT
+
+### Contact
+
+For questions or support, please contact [kushangayantha001@gmail.com]
+
+### Contribution
+
+Contributions are welcome! Please fork the repository and submit a pull request.
