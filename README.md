@@ -45,6 +45,9 @@ src/
 ├── Models/
 ├── Services/
 └── Data/
+|── Program.cs
+|── appsettings.json
+
 ```
 
 ### License
