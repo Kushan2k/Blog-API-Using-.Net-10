@@ -7,7 +7,6 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 ### Features
 
 - Create, read, update, and delete blog posts
-- Comment management
 - User authentication and authorization
 - Pagination and filtering
 - Comprehensive error handling
