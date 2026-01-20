@@ -28,11 +28,14 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 
 ### API Endpoints
 
-- `GET /api/posts` - List all posts
-- `POST /api/posts` - Create a new post
-- `GET /api/posts/{id}` - Get post by ID
-- `PUT /api/posts/{id}` - Update a post
-- `DELETE /api/posts/{id}` - Delete a post
+- `GET /api/blogs` - List all posts
+- `POST /api/blogs` - Create a new post
+- `GET /api/blogs/{id}` - Get post by ID
+- `PUT /api/blogs/{id}` - Update a post
+- `DELETE /api/blogs/{id}` - Delete a post
+
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - User login
 
 ### Project Structure
 
