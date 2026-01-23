@@ -13,7 +13,7 @@ public class BlogsController(IBlogService blogService) : ControllerBase
 
     private readonly IBlogService _blogService = blogService;
 
-  [HttpGet]
+    [HttpGet]
     [AllowAnonymous]
     public async Task<ActionResult> GetAllBlogs()
     {
@@ -22,7 +22,7 @@ public class BlogsController(IBlogService blogService) : ControllerBase
         return Ok(new { message = "All Blogs fetched successfully", data = await _blogService.GetAllBlogsAsync(), status = HttpStatusCode.OK });
     }
 
-    [HttpGet("{id}",Name = "GetBlogById")]
+    [HttpGet("{id}", Name = "GetBlogById")]
     [AllowAnonymous]
     public async Task<IActionResult> GetBlogById(int id)
     {
@@ -52,6 +52,19 @@ public class BlogsController(IBlogService blogService) : ControllerBase
         var blogs = await _blogService.GetBlogsByAuthorIdAsync(Convert.ToInt32(userId));
 
         return Ok(new { message = "User's Blogs fetched successfully", data = blogs, status = HttpStatusCode.OK });
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize]
+    public async Task<IActionResult> DeleteBlog(int id)
+    {
+        var userId = HttpContext.Items["UserId"];
+        if (userId == null)
+        {
+            return Unauthorized(new { message = "User not authorized", status = HttpStatusCode.Unauthorized });
+        }
+
+        return await _blogService.DeleteBlogAsync(id, Convert.ToInt32(userId));
     }
 
 }
