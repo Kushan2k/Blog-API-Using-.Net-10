@@ -1,3 +1,0 @@
-2026-01-16 09:09:19.017 +05:30 [INF] [1/16/2026 9:09:18 AM] -- User created successfully with email: kushan001@gmail.com
-2026-01-16 10:02:10.849 +05:30 [INF] [1/16/2026 10:02:10 AM] -- User created successfully with email: kushan00@gmail.com
-2026-01-16 10:02:18.786 +05:30 [INF] [1/16/2026 10:02:18 AM] -- User logged in successfully with email: kushan00@gmail.com
