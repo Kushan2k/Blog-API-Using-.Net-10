@@ -7,7 +7,6 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 ### Features
 
 - Create, read, update, and delete blog posts
-- Comment management
 - User authentication and authorization
 - Pagination and filtering
 - Comprehensive error handling
@@ -15,8 +14,9 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 ### Prerequisites
 
 - .NET 10 SDK or later
-- SQL Server or compatible database
+- MySql or compatible database
 - Visual Studio 2022 or VS Code
+- Postman or similar API testing tool
 
 ### Getting Started
 
@@ -28,11 +28,14 @@ A RESTful API for managing blog posts, built with .NET 10. This project demonstr
 
 ### API Endpoints
 
-- `GET /api/posts` - List all posts
-- `POST /api/posts` - Create a new post
-- `GET /api/posts/{id}` - Get post by ID
-- `PUT /api/posts/{id}` - Update a post
-- `DELETE /api/posts/{id}` - Delete a post
+- `GET /api/blogs` - List all posts
+- `POST /api/blogs` - Create a new post
+- `GET /api/blogs/{id}` - Get post by ID
+- `PUT /api/blogs/{id}` - Update a post
+- `DELETE /api/blogs/{id}` - Delete a post
+
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - User login
 
 ### Project Structure
 
@@ -42,8 +45,19 @@ src/
 ├── Models/
 ├── Services/
 └── Data/
+|── Program.cs
+|── appsettings.json
+
 ```
 
 ### License
 
 MIT
+
+### Contact
+
+For questions or support, please contact [kushangayantha001@gmail.com]
+
+### Contribution
+
+Contributions are welcome! Please fork the repository and submit a pull request.
