@@ -7,7 +7,7 @@ namespace learn.Services.BlogService;
 public interface IBlogService
 {
     Task<IActionResult> CreateBlogAsync(BlogCreateDto blogCreateDto);
-
+    Task<IActionResult> DeleteBlogAsync(int id, int v);
     Task<ICollection<Blog>> GetAllBlogsAsync();
 
     Task<IActionResult> GetBlogByIdAsync(int id);
