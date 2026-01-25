@@ -12,14 +12,14 @@ public class UserMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-      // Middleware logic can be added here
-      if (context.User.Identity?.IsAuthenticated==true)
-      {
-        var userid = context.User.FindFirst("userId")?.Value;
+        // Middleware logic can be added here
+        if (context.User.Identity?.IsAuthenticated == true)
+        {
+            var userid = context.User.FindFirst("userId")?.Value;
 
-        context.Items["UserId"] = userid;
-      }
+            context.Items["UserId"] = userid;
+        }
 
-          await _next(context);
+        await _next(context);
     }
 }
