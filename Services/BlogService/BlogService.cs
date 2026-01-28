@@ -121,4 +121,46 @@ public class BlogService(ApplicationDbContext _context, IHttpContextAccessor _ht
             return Task.FromResult<IActionResult>(new StatusCodeResult(500));
         }
     }
+
+    public Task<IActionResult> UpdateBlogAsync(int id, BlogUpdateDto blogUpdateDto, int v)
+    {
+        try
+        {
+            var blog = _context.Blogs.FirstOrDefault(b => b.Id == id);
+            if (blog == null)
+            {
+                return Task.FromResult<IActionResult>(new NotFoundObjectResult(new { message = "Blog not found", status = System.Net.HttpStatusCode.NotFound }));
+            }
+
+            if (blog.AuthorId != v)
+            {
+                return Task.FromResult<IActionResult>(new UnauthorizedObjectResult(new { message = "User not authorized to update this blog", status = System.Net.HttpStatusCode.Unauthorized }));
+            }
+
+            if (blogUpdateDto.Title != null)
+            {
+
+                blog.Title = blogUpdateDto.Title;
+            }
+
+            if (blogUpdateDto.Content != null)
+            {
+                blog.Content = blogUpdateDto.Content;
+            }
+
+            blog.UpdatedAt = DateTime.UtcNow;
+
+            _context.Blogs.Update(blog);
+            _context.SaveChanges();
+
+            return Task.FromResult<IActionResult>(new OkObjectResult(new { message = "Blog updated successfully", status = System.Net.HttpStatusCode.OK, blog = new BlogDto(blog.Id, blog.Title, blog.Content, blog.CreatedAt, blog.UpdatedAt) }));
+
+        }
+        catch (System.Exception)
+        {
+
+            _logger.LogError($"[{DateTime.Now}] -- Error updating blog");
+            return Task.FromResult<IActionResult>(new StatusCodeResult(500));
+        }
+    }
 }

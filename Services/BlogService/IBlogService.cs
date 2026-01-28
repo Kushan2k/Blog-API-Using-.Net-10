@@ -12,4 +12,5 @@ public interface IBlogService
 
     Task<IActionResult> GetBlogByIdAsync(int id);
     Task<IActionResult> GetBlogsByAuthorIdAsync(int authorId);
+    Task<IActionResult> UpdateBlogAsync(int id, BlogUpdateDto blogUpdateDto, int v);
 }

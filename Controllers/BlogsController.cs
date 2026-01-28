@@ -67,4 +67,18 @@ public class BlogsController(IBlogService blogService) : ControllerBase
         return await _blogService.DeleteBlogAsync(id, Convert.ToInt32(userId));
     }
 
+
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<IActionResult> UpdateBlog(int id, [FromBody] BlogUpdateDto blogUpdateDto)
+    {
+        var userId = HttpContext.Items["UserId"];
+        if (userId == null)
+        {
+            return Unauthorized(new { message = "User not authorized", status = HttpStatusCode.Unauthorized });
+        }
+
+        return await _blogService.UpdateBlogAsync(id, blogUpdateDto, Convert.ToInt32(userId));
+    }
+
 }
